@@ -23,7 +23,7 @@ class ApiUtil:
         return {"account_num": account_num, "sequence": sequence}
 
     def broadcast_tx(self, signed_tx: dict):
-        url = f"{self.base_url}/txs"
+        url = f"{self.base_url}/cosmos/tx/v1beta1/txs"
         response = requests.post(url, json=signed_tx)
         if not response.ok:
             raise Exception(
